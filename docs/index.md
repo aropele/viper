@@ -1,4 +1,4 @@
-# viper_draft
+# viper
 
 <a href='https://github.com/aropele/viper'><img src='logo.png' align="right" width="150" /></a>
 
