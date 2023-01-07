@@ -2,6 +2,10 @@
 
 <a href='https://github.com/aropele/viper'><img src='logo.png' align="right" width="150" /></a>
 
+[![PyPI version](https://badge.fury.io/py/viper-df.svg)](https://pypi.org/project/viper-df/)
+[![pages-build](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 > Simple, expressive pipeline syntax to transform and manipulate data with ease 
 
 ## Overview
