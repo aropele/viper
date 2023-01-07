@@ -1,6 +1,6 @@
 # viper
 
-<img src='docs/logo.png' align="right" width="150"/>
+<a href='https://aropele.github.io/viper/'><img src='logo.png' align="right" width="150" /></a>
 
 > Simple, expressive pipeline syntax to transform and manipulate data with ease 
 
@@ -16,7 +16,7 @@ Pipelining your DataFrame manipulation operations offers several benefits:
 - thinking of coding as a series of transformations between the input and the desired output can improve the design and make it less coupled
 
 ## Docs
-Complete documentation and reference are available on the package's site.
+Complete documentation and reference are available on the package's [site](https://aropele.github.io/viper/).
 
 ## Quick Start
 
@@ -75,7 +75,7 @@ pipeline(
 #     3      97.000000     0.046512
 ```
 
-Here you can find more examples, particularly on joins.
+[Here](https://aropele.github.io/viper/usage/) you can find more examples, particularly on joins.
 
 ## Roadmap
 
