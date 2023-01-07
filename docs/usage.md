@@ -15,7 +15,7 @@ df = pipeline(
     arrange("hp desc")
 )
 df
-#>            name   hp        wt
+#>           model   hp        wt
 #> 11   Merc 450SE  180  1.846111
 #> 12   Merc 450SL  180  1.691891
 #> 13  Merc 450SLC  180  1.714570
