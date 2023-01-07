@@ -1,6 +1,6 @@
 # viper
 
-<a href='https://aropele.github.io/viper/'><img src='logo.png' align="right" width="150" /></a>
+<a href='https://aropele.github.io/viper/'><img src='logo/logo.png' align="right" width="150" /></a>
 
 > Simple, expressive pipeline syntax to transform and manipulate data with ease 
 
