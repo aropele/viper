@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "viper-df"
+version = "0.0.5"
+authors = [
+  { name="Andrea Ropele", email="andrea.ropele@gmail.com" },
+]
+description = "Simple, expressive pipeline syntax to transform and manipulate data with ease"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["pandas"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/aropele/viper"
+"Bug Tracker" = "https://github.com/aropele/viper/issues"
+
+[tool.hatch.build]
+  exclude = ["tracers"]
+  include = [
+  "viper/*",
+]

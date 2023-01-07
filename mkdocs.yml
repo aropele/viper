@@ -1,0 +1,37 @@
+site_name: viper
+
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: "material"
+  palette:
+    primary: light green
+    accent: green
+  logo: logo.png 
+
+plugins:
+- mkdocstrings:
+    custom_templates: templates
+    default_handler: python
+    handlers:
+      python:
+        options:
+          show_source: false
+
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - Reference: reference.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences 
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/aropele/viper
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/andrea-ropele

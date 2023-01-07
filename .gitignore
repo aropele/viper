@@ -1,0 +1,7 @@
+.vscode/
+dist/
+site/
+*__pycache__/
+
+Pipfile
+Pipfile.lock
