@@ -4,15 +4,15 @@ Here are some additional examples of using `viper` to analyze the `mtcars` datas
 
 Find the Mercedes models present in the dataset, convert their weight to tonnes, and sort the results by horsepower:
 ```python
-from viper.main import *
+import viper as v
 from viper.data import mtcars
 
-df = pipeline(
+df = v.pipeline(
     mtcars,
-    filter(lambda r: "Merc" in r["model"]),
-    select("model", "hp", "wt"),
-    mutate(wt=lambda r: r["wt"] * 0.45359),
-    arrange("hp desc")
+    v.filter(lambda r: "Merc" in r["model"]),
+    v.select("model", "hp", "wt"),
+    v.mutate(wt=lambda r: r["wt"] * 0.45359),
+    v.arrange("hp desc")
 )
 df
 #>           model   hp        wt
@@ -27,14 +27,14 @@ df
 
 Determine the frequency table of car manufacturers that have at least two models in the dataset:
 ```python
-df = pipeline(
+df = v.pipeline(
     mtcars,
-    mutate(
+    v.mutate(
         producer=lambda r: r["model"].split(' ')[0]
     ),
-    group_by("producer"),
-    summarize("producer = size()"),
-    filter(lambda r: r["producer"] >= 2)
+    v.group_by("producer"),
+    v.summarize("producer = size()"),
+    v.filter(lambda r: r["producer"] >= 2)
 )
 df
 #>           producer
@@ -50,17 +50,17 @@ df
 
 To demonstrate the use of the `left_join` function, we will calculate the z-scores of the horsepower variable with respect to the population grouped by the number of cylinders, using only `viper`:
 ```python
-df_metrics = pipeline(
+df_metrics = v.pipeline(
     mtcars,
-    mutate(
+    v.mutate(
         hp_mean=lambda r: r["hp"],
         hp_std=lambda r: r["hp"]
     ),
-    group_by("cyl"),
-    summarize(
+    v.group_by("cyl"),
+    v.summarize(
         "hp_mean = mean()",
         "hp_std = std()"
-    )
+    v.)
 )
 df_metrics
 #>         hp_mean     hp_std
@@ -69,14 +69,14 @@ df_metrics
 #> 6    122.285714  24.260491
 #> 8    209.214286  50.976886
 
-df_zscores = pipeline(
+df_zscores = v.pipeline(
     mtcars,
-    select("model", "cyl", "hp"),
-    left_join(
+    v.select("model", "cyl", "hp"),
+    v.left_join(
         df_metrics,
         by = "cyl"
     ),
-    mutate(
+    v.mutate(
         zscore = lambda r: (r["hp"] - r["hp_mean"]) / r["hp_std"]
     )
 )
@@ -92,16 +92,16 @@ df_zscores.head()
 The `anti_join` function is a type of filtering join that can be used to remove from the current dataset any rows that match a row in another dataset.
 In this example, it will be used to remove models from the dataset that are made by producers that are present in df_filter:
 ```python
-df = pipeline(
+df = v.pipeline(
     mtcars,
-    mutate(producer=lambda r: r["model"].split(' ')[0])
+    v.mutate(producer=lambda r: r["model"].split(' ')[0])
 )
 
-df_filter = pipeline(
+df_filter = v.pipeline(
     df,
-    select("producer"),
-    filter(lambda r: r["producer"] in ["Merc", "Ferrari", "Toyota"]),
-    distinct("producer")
+    v.select("producer"),
+    v.filter(lambda r: r["producer"] in ["Merc", "Ferrari", "Toyota"]),
+    v.distinct("producer")
 )
 df_filter
 #>    producer
@@ -109,14 +109,14 @@ df_filter
 #> 19   Toyota
 #> 29  Ferrari
 
-df_filtered = pipeline(
+df_filtered = v.pipeline(
     df,
-    anti_join(
+    v.anti_join(
         df_filter,
         by = "producer"
     ),
-    distinct("producer"),
-    arrange("producer")
+    v.distinct("producer"),
+    v.arrange("producer")
 )
 df_filtered
 #>     producer

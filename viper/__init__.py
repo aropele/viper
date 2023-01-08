@@ -7,3 +7,31 @@ Pipelining your DataFrame manipulation operations offers several benefits:
 - ability to chain a long sequence of operations in a single command
 - thinking of coding as a series of transformations between the input and the desired output can improve the design and make it less coupled
 """
+
+__all__ = [
+    "anti_join",
+    "arrange",
+    "distinct",
+    "filter",
+    "group_by",
+    "left_join",
+    "mutate",
+    "pipeline",
+    "rename",
+    "select",
+    "summarize",
+]
+
+from viper.functions import (
+    anti_join,
+    arrange,
+    distinct,
+    filter,
+    group_by,
+    left_join,
+    mutate,
+    pipeline,
+    rename,
+    select,
+    summarize,
+)

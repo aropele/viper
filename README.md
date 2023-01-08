@@ -6,7 +6,6 @@
 [![pages-build](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-
 > Simple, expressive pipeline syntax to transform and manipulate data with ease 
 
 ## Overview
@@ -43,27 +42,27 @@ Furthermore:
 
 
 ``` python
-from viper.main import *
+import viper as v
 from viper.data import mtcars
 
-pipeline(
+v.pipeline(
     mtcars,
-    rename(
+    v.rename(
         "hp = power",
         "mpg = consumption",
     ),
-    mutate(
+    v.mutate(
         consumption=lambda r: 1 / r["consumption"]
     ),
-    filter(
+    v.filter(
         lambda r: r["wt"] > 2
     ),
-    group_by("cyl", "gear"),
-    summarize(
+    v.group_by("cyl", "gear"),
+    v.summarize(
         "power = mean()",
         "consumption = mean()"
     ),
-    arrange(
+    v.arrange(
         "cyl desc",
         "gear desc"
     ),

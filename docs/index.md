@@ -44,27 +44,27 @@ Furthermore:
 
 
 ``` python
-from viper.main import *
+import viper as v
 from viper.data import mtcars
 
-pipeline(
+v.pipeline(
     mtcars,
-    rename(
+    v.rename(
         "hp = power",
         "mpg = consumption",
     ),
-    mutate(
+    v.mutate(
         consumption=lambda r: 1 / r["consumption"]
     ),
-    filter(
+    v.filter(
         lambda r: r["wt"] > 2
     ),
-    group_by("cyl", "gear"),
-    summarize(
+    v.group_by("cyl", "gear"),
+    v.summarize(
         "power = mean()",
         "consumption = mean()"
     ),
-    arrange(
+    v.arrange(
         "cyl desc",
         "gear desc"
     ),
