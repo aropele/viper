@@ -60,7 +60,7 @@ df_metrics = v.pipeline(
     v.summarize(
         "hp_mean = mean()",
         "hp_std = std()"
-    v.)
+    )
 )
 df_metrics
 #>         hp_mean     hp_std
