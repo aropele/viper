@@ -1,5 +1,7 @@
 site_name: viper
 
+repo_url: https://github.com/aropele/viper
+
 extra_css:
   - stylesheets/extra.css
 
