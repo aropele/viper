@@ -30,7 +30,7 @@ Determine the frequency table of car manufacturers that have at least two models
 df = v.pipeline(
     mtcars,
     v.mutate(
-        producer=lambda r: r["model"].split(' ')[0]
+        producer=lambda r: r["model"].str.split(' ', expand = True)[0]
     ),
     v.group_by("producer"),
     v.summarize("producer = size()"),
@@ -94,7 +94,9 @@ In this example, it will be used to remove models from the dataset that are made
 ```python
 df = v.pipeline(
     mtcars,
-    v.mutate(producer=lambda r: r["model"].split(' ')[0])
+    v.mutate(
+        producer=lambda r: r["model"].str.split(' ', expand = True)[0]
+    ),
 )
 
 df_filter = v.pipeline(

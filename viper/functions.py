@@ -118,6 +118,10 @@ def mutate(**transformations):
     """
     Applies transformations to the columns of a Pandas DataFrame.
 
+    The transformation functions operate on the entire DataFrame, which is passed as a single argument to the function. This makes it suitable for transformations that uses pd.Series methods.
+    
+    If you need individual row-level processing, plese refer to the `mutate_row` function. 
+
     Args:
         **transformations: A dictionary of new column names and transformation functions.
 
@@ -126,14 +130,31 @@ def mutate(**transformations):
     """
 
     def _mutate(df):
-        for (
-            new_column,
-            transformation,
-        ) in transformations.items():
-            df[new_column] = df.apply(
-                transformation,
-                axis=1,
-            )
+        for new_column, transformation in transformations.items():
+            df[new_column] = transformation(df)
+        return df
+
+    return _mutate
+
+
+def mutate_row(**transformations):
+    """
+    Applies transformations to columns of a Pandas DataFrame at a row-level.
+
+    This means that the transformation functions are applied to each row of the DataFrame, allowing for row-level processing.
+
+    If you need transformations that operate on the entire DataFrame, plese refer to the `mutate` function.
+    
+    Args:
+        **transformations: A dictionary of new column names and transformation functions.
+
+    Returns:
+        A transformed Pandas DataFrame.
+    """
+
+    def _mutate(df):
+        for new_column, transformation in transformations.items():
+            df[new_column] = df.apply(transformation, axis=1)
         return df
 
     return _mutate
