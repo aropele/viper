@@ -5,3 +5,5 @@ site/
 
 Pipfile
 Pipfile.lock
+
+test.py
