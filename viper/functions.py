@@ -260,3 +260,38 @@ def anti_join(right, by):
         return left[~left[by].isin(right[by])]
 
     return join
+
+
+def tail(n=6):
+    """
+    Returns a lambda function that retrieves the last n rows of a pandas DataFrame.
+
+    Args:
+        n (int, optional): The number of rows to return. Defaults to 5.
+
+    Returns:
+        function: A lambda function that takes a DataFrame as input and returns a new DataFrame containing the last n rows.
+    """
+
+    def _tail(df):
+        return df.tail(n)
+
+    return _tail
+
+
+def head(n=5):
+    """
+    Returns a lambda function that retrieves the first n rows of a pandas DataFrame.
+
+    Args:
+        n (int, optional): The number of rows to return. Defaults to 5.
+
+    Returns:
+        function: A lambda function that takes a DataFrame as input and returns a new DataFrame containing the first n rows.
+    """
+
+    def _head(df):
+        return df.head(n)
+
+    return _head
+
