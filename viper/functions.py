@@ -119,8 +119,8 @@ def mutate(**transformations):
     Applies transformations to the columns of a Pandas DataFrame.
 
     The transformation functions operate on the entire DataFrame, which is passed as a single argument to the function. This makes it suitable for transformations that uses pd.Series methods.
-    
-    If you need individual row-level processing, plese refer to the `mutate_row` function. 
+
+    If you need individual row-level processing, plese refer to the `mutate_row` function.
 
     Args:
         **transformations: A dictionary of new column names and transformation functions.
@@ -144,7 +144,7 @@ def mutate_row(**transformations):
     This means that the transformation functions are applied to each row of the DataFrame, allowing for row-level processing.
 
     If you need transformations that operate on the entire DataFrame, plese refer to the `mutate` function.
-    
+
     Args:
         **transformations: A dictionary of new column names and transformation functions.
 
@@ -328,3 +328,31 @@ def squeeze():
         return df.squeeze()
 
     return _squeeze
+
+
+def filter_index(custom=None, mode="custom"):
+    """
+    Returns a lambda function that filters a pandas DataFrame based on a custom value or the max/min value of the index.
+
+    Args:
+        custom (int, optional): The custom value to filter the index. Required if mode is 'custom'.
+        mode (str, optional): The mode of filtering. Can be 'custom', 'max', or 'min'. Defaults to 'custom'.
+
+    Returns:
+        function: A lambda function that takes a DataFrame as input and returns a new DataFrame filtered based on the specified value or max/min value of the index.
+    """
+
+    if mode not in ["custom", "max", "min"]:
+        raise ValueError("Invalid mode. Must be 'custom', 'max', or 'min'.")
+
+    def _filter_index(df):
+        if mode == "custom":
+            if custom is None:
+                raise ValueError("Custom value must be provided when mode is 'custom'.")
+            return df.loc[df.index == custom]
+        elif mode == "max":
+            return df.loc[df.index == df.index.max()]
+        elif mode == "min":
+            return df.loc[df.index == df.index.min()]
+
+    return _filter_index

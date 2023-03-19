@@ -25,6 +25,7 @@ __all__ = [
     "head",
     "to_csv",
     "squeeze",
+    "filter_index",
 ]
 
 from viper.functions import (
@@ -44,4 +45,5 @@ from viper.functions import (
     head,
     to_csv,
     squeeze,
+    filter_index,
 )
