@@ -315,3 +315,16 @@ def to_csv(filename, index=False, **kwargs):
 
     return _to_csv
 
+
+def squeeze():
+    """
+    Returns a lambda function that squeezes a pandas DataFrame into a pandas Series if it has only one column or one row.
+
+    Returns:
+        function: A lambda function that takes a DataFrame as input and returns a pandas Series if the DataFrame has only one column or one row, otherwise returns the original DataFrame.
+    """
+
+    def _squeeze(df):
+        return df.squeeze()
+
+    return _squeeze
