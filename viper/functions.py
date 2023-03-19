@@ -295,3 +295,23 @@ def head(n=5):
 
     return _head
 
+
+def to_csv(filename, index=False, **kwargs):
+    """
+    Returns a lambda function that saves a pandas DataFrame to a CSV file.
+
+    Args:
+        filename (str): The name of the file to save the DataFrame to.
+        index (bool, optional): Whether or not to write row names (index). Defaults to False.
+        **kwargs: Additional keyword arguments to be passed to pandas.DataFrame.to_csv() function.
+
+    Returns:
+        function: A lambda function that takes a DataFrame as input and saves it to a CSV file.
+    """
+
+    def _to_csv(df):
+        df.to_csv(filename, index=index, **kwargs)
+        return df
+
+    return _to_csv
+

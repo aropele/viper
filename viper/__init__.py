@@ -21,6 +21,9 @@ __all__ = [
     "rename",
     "select",
     "summarize",
+    "tail",
+    "head",
+    "to_csv",
 ]
 
 from viper.functions import (
@@ -36,4 +39,7 @@ from viper.functions import (
     rename,
     select,
     summarize,
+    tail,
+    head,
+    to_csv,
 )
