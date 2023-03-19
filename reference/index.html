@@ -273,8 +273,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viper.functions.filter_index" class="md-nav__link">
+    filter_index()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viper.functions.group_by" class="md-nav__link">
     group_by()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.head" class="md-nav__link">
+    head()
   </a>
   
 </li>
@@ -289,6 +303,13 @@
         <li class="md-nav__item">
   <a href="#viper.functions.mutate" class="md-nav__link">
     mutate()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.mutate_row" class="md-nav__link">
+    mutate_row()
   </a>
   
 </li>
@@ -315,8 +336,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viper.functions.squeeze" class="md-nav__link">
+    squeeze()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viper.functions.summarize" class="md-nav__link">
     summarize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.tail" class="md-nav__link">
+    tail()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.to_csv" class="md-nav__link">
+    to_csv()
   </a>
   
 </li>
@@ -389,8 +431,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viper.functions.filter_index" class="md-nav__link">
+    filter_index()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viper.functions.group_by" class="md-nav__link">
     group_by()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.head" class="md-nav__link">
+    head()
   </a>
   
 </li>
@@ -405,6 +461,13 @@
         <li class="md-nav__item">
   <a href="#viper.functions.mutate" class="md-nav__link">
     mutate()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.mutate_row" class="md-nav__link">
+    mutate_row()
   </a>
   
 </li>
@@ -431,8 +494,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viper.functions.squeeze" class="md-nav__link">
+    squeeze()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viper.functions.summarize" class="md-nav__link">
     summarize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.tail" class="md-nav__link">
+    tail()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viper.functions.to_csv" class="md-nav__link">
+    to_csv()
   </a>
   
 </li>
@@ -740,6 +824,75 @@ with the rows sorted according to the specified columns.</p></td>
 
 
 
+<h2 id="viper.functions.filter_index" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">filter_index</span><span class="p">(</span><span class="n">custom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a lambda function that filters a pandas DataFrame based on a custom value or the max/min value of the index.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>custom</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>The custom value to filter the index. Required if mode is 'custom'.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mode</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The mode of filtering. Can be 'custom', 'max', or 'min'. Defaults to 'custom'.</p></td>
+          <td>
+                <code>&#39;custom&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>function</code></td>          <td>
+          </td>
+          <td><p>A lambda function that takes a DataFrame as input and returns a new DataFrame filtered based on the specified value or max/min value of the index.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h2 id="viper.functions.group_by" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">group_by</span><span class="p">(</span><span class="o">*</span><span class="n">columns</span><span class="p">)</span></code>
 
@@ -787,6 +940,65 @@ with the rows sorted according to the specified columns.</p></td>
 <td><code>function</code></td>          <td>
           </td>
           <td><p>A lambda function that takes a DataFrame as input and returns a new DataFrame with the rows grouped according to the specified columns."</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="viper.functions.head" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a lambda function that retrieves the first n rows of a pandas DataFrame.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>n</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>The number of rows to return. Defaults to 5.</p></td>
+          <td>
+                <code>5</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>function</code></td>          <td>
+          </td>
+          <td><p>A lambda function that takes a DataFrame as input and returns a new DataFrame containing the first n rows.</p></td>
         </tr>
     </tbody>
   </table>
@@ -878,6 +1090,68 @@ with the rows sorted according to the specified columns.</p></td>
   <div class="doc doc-contents ">
   
       <p>Applies transformations to the columns of a Pandas DataFrame.</p>
+<p>The transformation functions operate on the entire DataFrame, which is passed as a single argument to the function. This makes it suitable for transformations that uses pd.Series methods.</p>
+<p>If you need individual row-level processing, plese refer to the <code>mutate_row</code> function.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>**transformations</code></td>
+          <td>
+          </td>
+          <td><p>A dictionary of new column names and transformation functions.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>A transformed Pandas DataFrame.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="viper.functions.mutate_row" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">mutate_row</span><span class="p">(</span><span class="o">**</span><span class="n">transformations</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Applies transformations to columns of a Pandas DataFrame at a row-level.</p>
+<p>This means that the transformation functions are applied to each row of the DataFrame, allowing for row-level processing.</p>
+<p>If you need transformations that operate on the entire DataFrame, plese refer to the <code>mutate</code> function.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1117,6 +1391,41 @@ with the specified column name mappings applied.</p></td>
 
 
 
+<h2 id="viper.functions.squeeze" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">squeeze</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a lambda function that squeezes a pandas DataFrame into a pandas Series if it has only one column or one row.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>function</code></td>          <td>
+          </td>
+          <td><p>A lambda function that takes a DataFrame as input and returns a pandas Series if the DataFrame has only one column or one row, otherwise returns the original DataFrame.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h2 id="viper.functions.summarize" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">summarize</span><span class="p">(</span><span class="o">*</span><span class="n">aggregations</span><span class="p">)</span></code>
 
@@ -1164,6 +1473,143 @@ with the specified column name mappings applied.</p></td>
 <td><code>function</code></td>          <td>
           </td>
           <td><p>A lambda function that takes a DataFrame as input and returns a new DataFrame with the specified aggregations applied to each group.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="viper.functions.tail" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a lambda function that retrieves the last n rows of a pandas DataFrame.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>n</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>The number of rows to return. Defaults to 5.</p></td>
+          <td>
+                <code>6</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>function</code></td>          <td>
+          </td>
+          <td><p>A lambda function that takes a DataFrame as input and returns a new DataFrame containing the last n rows.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="viper.functions.to_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a lambda function that saves a pandas DataFrame to a CSV file.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>filename</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the file to save the DataFrame to.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>index</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>Whether or not to write row names (index). Defaults to False.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+          </td>
+          <td><p>Additional keyword arguments to be passed to pandas.DataFrame.to_csv() function.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>function</code></td>          <td>
+          </td>
+          <td><p>A lambda function that takes a DataFrame as input and saves it to a CSV file.</p></td>
         </tr>
     </tbody>
   </table>
