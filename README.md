@@ -3,6 +3,7 @@
 <a href='https://aropele.github.io/viper/'><img src='docs/logo.png' align="right" width="150" /></a>
 
 [![PyPI version](https://badge.fury.io/py/viper-df.svg)](https://pypi.org/project/viper-df/)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/viper-df)
 [![pages-build](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/aropele/viper/actions/workflows/pages/pages-build-deployment)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
