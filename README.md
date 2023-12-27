@@ -1,3 +1,6 @@
+> ! I am archiving the repository because I have decided to use [siuba](https://siuba.org/) going forward.
+
+
 # viper
 
 <a href='https://aropele.github.io/viper/'><img src='docs/logo.png' align="right" width="150" /></a>
